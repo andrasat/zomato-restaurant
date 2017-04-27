@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux'
-import recipeReducer from './recipe'
-import searchReducer from './search'
+import restaurantReducer from './restaurant'
 
 const reducers = combineReducers({
-  recipes: recipeReducer,
-  keyword: searchReducer
+  restaurant: restaurantReducer
 })
 
 export default reducers

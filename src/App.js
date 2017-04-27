@@ -10,15 +10,15 @@ class App extends Component {
         <div className="App">
           <nav className="nav cook">
             <div className="nav-left">
-              <p className="title is-4 nav-item"><Link to="/">Be a Better Cook</Link></p>
+              <p className="title is-4 nav-item"><Link to="/">Zomato in Jakarta</Link></p>
             </div>
             <div className="nav-right">
-              <p className="subtitle is-6 nav-item"><Link to="/profile">Profile</Link></p>
+              <p className="subtitle is-6 nav-item"><Link to="/add">Add Restaurant</Link></p>
             </div>
           </nav>
 
           <Route exact path="/" />
-          <Route exact path="/profile" />
+          <Route path="/add" />
         </div>
       </Router>
     )
