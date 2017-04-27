@@ -1,24 +1,10 @@
-.App {
-  text-align: center;
+.cook {
+  margin: 3em 2em;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.nav-left {
+  margin-left: 2em;
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.nav-right {
+  margin-right: 2em;
 }
