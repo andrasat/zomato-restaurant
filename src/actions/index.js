@@ -1,5 +1,5 @@
-import secret from '../config';
 import axios from 'axios';
+import secret from '../config';
 import {
   FETCH_RESTAURANT_SUCCESS,
   ADD_OWN_RESTAURANT,
@@ -7,7 +7,7 @@ import {
   DELETE_OWN_RESTAURANT,
 } from '../constants';
 
-export const fetchRecipeSuccess = data => ({
+export const fetchRestaurantsSuccess = data => ({
   type: FETCH_RESTAURANT_SUCCESS,
   payload: data,
 });
@@ -27,16 +27,10 @@ export const editRestaurant = data => ({
   payload: data,
 });
 
-export const fetchRecipes = (keyword) => {
-  return (dispatch) => {
-    const zomatoHead = new Headers({
-      'user-key': secret.ZOMATO_API,
-    });
-    fetch(`https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&q=${keyword}`, {
-      method: 'GET',
-      headers: zomatoHead,
-    }).then((res) => {
-      return res.json();
-    }).then(data => dispatch(fetchRecipeSuccess(data.restaurants)));
-  };
-};
+export const fetchRestaurants = keyword => (
+  (dispatch) => {
+    axios.get(`https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&q=${keyword}`, {
+      headers: { 'user-key': secret.ZOMATO_API },
+    }).then(res => dispatch(fetchRestaurantsSuccess(res.data.restaurants)));
+  }
+);

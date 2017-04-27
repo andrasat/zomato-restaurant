@@ -10,18 +10,18 @@ const addRestaurant = (state, payload) => {
   return newState;
 };
 
-const editRestaurant = (state, { id, name, address, featured_image, url }) => {
+const editRestaurant = (state, payload) => {
   const newState = state.map((each) => {
-    if (each.id === id) {
-      return { ...each, name, address, featured_image, url };
+    if (each.id === payload.id) {
+      return { ...each, payload };
     }
     return each;
   });
   return newState;
 };
 
-const deleteRestaurant = (state, payload) => {
-  const newState = state.filter(each => each.id !== payload);
+const deleteRestaurant = (state, id) => {
+  const newState = state.filter(each => each.id !== id);
   return newState;
 };
 

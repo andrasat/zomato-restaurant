@@ -1,4 +1,4 @@
-import Main from './Main';
+import Main from './Main/index';
 import Add from './Add';
 
 export {
