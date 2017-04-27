@@ -1,13 +1,36 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { fetchRecipes } from '../actions';
 
-const Main = () => {
+class Main extends React.Component {
 
-  return (
-    <div className='Main'>
-      
-    </div>
-  )
+  componentDidMount() {
 
+  }
+
+  render() {
+    const { restaurants } = this.props
+    return (
+      <div className="Main">
+        <div className="columns">
+          {}
+        </div>
+      </div>
+    );
+  }
 }
 
-export default Main
+Main.PropTypes = {
+  restaurants: PropTypes.array.isRequired,
+};
+
+const mapStateToProps = state => ({
+  restaurants: state.restaurants,
+});
+
+const mapDispatchProps = dispatch => ({
+  fetchRecipes: () => dispatch(fetchRecipes()),
+});
+
+export default connect(mapStateToProps, mapDispatchProps)(Main);

@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import './App.css'
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import './App.css';
 
 class App extends Component {
 
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <nav className="nav cook">
+          <nav className="nav zomato">
             <div className="nav-left">
               <p className="title is-4 nav-item"><Link to="/">Zomato in Jakarta</Link></p>
             </div>
@@ -22,7 +22,7 @@ class App extends Component {
         </div>
       </Router>
     )
-  }
-}
+  };
+};
 
-export default App
+export default App;
