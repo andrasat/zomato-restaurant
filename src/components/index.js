@@ -1,6 +1,6 @@
 import Main from './Main';
-import Profile from './Profile';
+import Add from './Add';
 
-export default {
-  Main, Profile,
+export {
+  Main, Add,
 };

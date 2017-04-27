@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Add, Main } from './components';
 import './App.css';
 
 class App extends Component {
@@ -13,12 +14,12 @@ class App extends Component {
               <p className="title is-4 nav-item"><Link to="/">Zomato in Jakarta</Link></p>
             </div>
             <div className="nav-right">
-              <p className="subtitle is-6 nav-item"><Link to="/add">Add Restaurant</Link></p>
+              <p className="nav-item"><Link to="/add">Add Restaurant</Link></p>
             </div>
           </nav>
 
-          <Route exact path="/" />
-          <Route path="/add" />
+          <Route exact path="/" component={Main} />
+          <Route path="/add" component={Add} />
         </div>
       </Router>
     )

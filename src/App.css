@@ -1,5 +1,5 @@
-.restaurant {
-  margin: 3em 2em;
+.zomato {
+  margin: 5em 2em 1em 2em;
   border-bottom: 1px solid rgba(0,0,0,0.3);
 }
 .nav-left {
@@ -7,4 +7,16 @@
 }
 .nav-right {
   margin-right: 2em;
+}
+
+.main-page {
+  margin: auto;
+  padding: 2em;
+}
+.search-box {
+  margin: auto;
+  padding: 1em;
+}
+.loading {
+  text-align: center;
 }

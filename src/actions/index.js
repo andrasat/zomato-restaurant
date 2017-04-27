@@ -1,4 +1,5 @@
 import secret from '../config';
+import axios from 'axios';
 import {
   FETCH_RESTAURANT_SUCCESS,
   ADD_OWN_RESTAURANT,
@@ -32,9 +33,10 @@ export const fetchRecipes = (keyword) => {
       'user-key': secret.ZOMATO_API,
     });
     fetch(`https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&q=${keyword}`, {
+      method: 'GET',
       headers: zomatoHead,
-    })
-      .then(res => res.json())
-      .then(data => dispatch(fetchRecipeSuccess(data.restaurants)));
+    }).then((res) => {
+      return res.json();
+    }).then(data => dispatch(fetchRecipeSuccess(data.restaurants)));
   };
 };
